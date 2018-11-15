@@ -1,3 +1,10 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Custom Grid.cs](./CS/CustomAutoFilterRowFiltering/Custom Grid.cs) (VB: [Custom Grid.vb](./VB/CustomAutoFilterRowFiltering/Custom Grid.vb))
+* [Form1.cs](./CS/CustomAutoFilterRowFiltering/Form1.cs) (VB: [Form1.vb](./VB/CustomAutoFilterRowFiltering/Form1.vb))
+* [Program.cs](./CS/CustomAutoFilterRowFiltering/Program.cs) (VB: [Program.vb](./VB/CustomAutoFilterRowFiltering/Program.vb))
+<!-- default file list end -->
 # How to make the auto filter row's filter accent insensitive
 
 
