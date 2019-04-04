@@ -15,7 +15,7 @@
 
 <h3>Description</h3>
 
-<p>Starting from version 15.1 the <a href="https://documentation.devexpress.com/#WindowsForms/DevExpressXtraGridViewsBaseColumnView_SubstituteFiltertopic">SubstituteFilter</a> event was introduced. Using this event, it is possible to inject a <a href="https://documentation.devexpress.com/#WindowsForms/CustomDocument9947">custom function</a> into the grid filter. This capability is used in the new version of the example.<br><br><strong>See also:</strong><br><a data-ticket="T385990">How to make the Grid's filter to be a case- and accent-insensitive in Server Mode</a></p>
+<p>Starting from version 15.1 the <a href="https://documentation.devexpress.com/#WindowsForms/DevExpressXtraGridViewsBaseColumnView_SubstituteFiltertopic">SubstituteFilter</a> event was introduced. Using this event, it is possible to inject a <a href="https://documentation.devexpress.com/#WindowsForms/CustomDocument9947">custom function</a> into the grid filter. This capability is used in the new version of the example.<br><br><strong>See also:</strong><br><a href="https://www.devexpress.com/Support/Center/Question/Details/T385990/how-to-make-the-grid-s-filter-to-be-a-case-and-accent-insensitive-in-server-mode">How to make the Grid's filter to be a case- and accent-insensitive in Server Mode</a></p>
 
 <br/>
 
