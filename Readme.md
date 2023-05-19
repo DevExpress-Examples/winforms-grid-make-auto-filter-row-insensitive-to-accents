@@ -6,7 +6,6 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [ClientCriteriaVisitorBase.cs](./CS/DxSample/Filtering/ClientCriteriaVisitorBase.cs) (VB: [ClientCriteriaVisitorBase.vb](./VB/DxSample/Filtering/ClientCriteriaVisitorBase.vb))
 * [GridFilterSubstitutor.cs](./CS/DxSample/Filtering/GridFilterSubstitutor.cs) (VB: [GridFilterSubstitutor.vb](./VB/DxSample/Filtering/GridFilterSubstitutor.vb))
 * [RemoveDiacriticsFunction.cs](./CS/DxSample/Filtering/RemoveDiacriticsFunction.cs) (VB: [RemoveDiacriticsFunction.vb](./VB/DxSample/Filtering/RemoveDiacriticsFunction.vb))
 * [MainForm.cs](./CS/DxSample/MainForm.cs) (VB: [MainForm.vb](./VB/DxSample/MainForm.vb))
