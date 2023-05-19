@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using DevExpress.Data.Filtering;
+﻿using DevExpress.Data.Filtering;
 using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
 using DxSample.Filtering;
+using System;
+using System.Windows.Forms;
 
 namespace DxSample {
     static class Program {

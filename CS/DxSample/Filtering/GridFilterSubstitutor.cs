@@ -2,11 +2,10 @@
 using DevExpress.Data.Filtering.Helpers;
 
 namespace DxSample.Filtering {
-    public class GridFilterSubstitutor : ClientCriteriaLazyPatcherBase.AggregatesCommonProcessingBase
-    {
+    public class GridFilterSubstitutor : ClientCriteriaLazyPatcherBase.AggregatesCommonProcessingBase {
         private static CriteriaOperator WrapIntoCustomFunction(CriteriaOperator param) {
-            return new FunctionOperator(FunctionOperatorType.Custom, 
-                new ConstantValue("RemoveDiacritics"), (CriteriaOperator)param);
+            return new FunctionOperator(FunctionOperatorType.Custom,
+                new ConstantValue("RemoveDiacritics"), param);
         }
 
         public static CriteriaOperator Substitute(CriteriaOperator source) {

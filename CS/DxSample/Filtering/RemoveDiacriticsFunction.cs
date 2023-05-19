@@ -1,38 +1,36 @@
-﻿using System;
+﻿using DevExpress.Data.Filtering;
+using DevExpress.Utils.Extensions;
+using System;
 using System.Globalization;
+using System.Linq;
 using System.Text;
-using DevExpress.Data.Filtering;
 
 namespace DxSample.Filtering {
     public sealed class RemoveDiacriticsFunction : ICustomFunctionOperator {
-        object ICustomFunctionOperator.Evaluate(params object[] operands) {
-            string src = (string)operands[0];
+        public object Evaluate(params object[] operands) {
+            var src = (string)operands[0];
             if (src == null)
                 return string.Empty;
 
-            StringBuilder sb = new StringBuilder();
-            foreach (char c in src.Normalize(NormalizationForm.FormKD))
-                switch (CharUnicodeInfo.GetUnicodeCategory(c))
-                {
-                    case UnicodeCategory.NonSpacingMark:
-                    case UnicodeCategory.SpacingCombiningMark:
-                    case UnicodeCategory.EnclosingMark:
-                        //do nothing
-                        break;
-                    default:
-                        sb.Append(c);
-                        break;
-                }
-            
+            var sb = new StringBuilder();
+
+            src.Normalize(NormalizationForm.FormKD)
+                .Where(c => !IsDiacritic(c))
+                .ForEach(c => sb.Append(c));
+
             return sb.ToString();
         }
 
-        string ICustomFunctionOperator.Name {
-            get { return "RemoveDiacritics"; }
+        private bool IsDiacritic(char symbol) {
+            var category = CharUnicodeInfo.GetUnicodeCategory(symbol);
+
+            return category == UnicodeCategory.NonSpacingMark ||
+                   category == UnicodeCategory.SpacingCombiningMark ||
+                   category == UnicodeCategory.EnclosingMark;
         }
 
-        Type ICustomFunctionOperator.ResultType(params Type[] operands) {
-            return typeof(string);
-        }
+        public string Name => "RemoveDiacritics";
+
+        public Type ResultType(params Type[] operands) => typeof(string);
     }
 }
