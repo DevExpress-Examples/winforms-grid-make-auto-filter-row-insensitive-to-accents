@@ -1,5 +1,7 @@
-﻿Namespace DxSample
-    Partial Public Class MainForm
+Namespace DxSample
+
+    Partial Class MainForm
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,14 +12,14 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -28,8 +30,8 @@
             Me.gridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
             Me.gridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
             Me.gridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
-            CType(Me.GridControl, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.GridView, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.GridControl), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.GridView), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' GridControl
@@ -41,14 +43,15 @@
             Me.GridControl.ShowOnlyPredefinedDetails = True
             Me.GridControl.Size = New System.Drawing.Size(862, 253)
             Me.GridControl.TabIndex = 0
-            Me.GridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() { Me.GridView})
+            Me.GridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView})
             ' 
             ' GridView
             ' 
-            Me.GridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() { Me.gridColumn1, Me.gridColumn2, Me.gridColumn3})
+            Me.GridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.gridColumn1, Me.gridColumn2, Me.gridColumn3})
             Me.GridView.GridControl = Me.GridControl
             Me.GridView.Name = "GridView"
             Me.GridView.OptionsView.ShowAutoFilterRow = True
+            AddHandler Me.GridView.SubstituteFilter, New System.EventHandler(Of DevExpress.Data.SubstituteFilterEventArgs)(AddressOf Me.GridView_SubstituteFilter)
             ' 
             ' gridColumn1
             ' 
@@ -80,19 +83,21 @@
             Me.Controls.Add(Me.GridControl)
             Me.Name = "MainForm"
             Me.Text = "Dx Sample"
-            CType(Me.GridControl, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.GridView, System.ComponentModel.ISupportInitialize).EndInit()
+            AddHandler Me.Load, New System.EventHandler(AddressOf Me.MainForm_Load)
+            CType((Me.GridControl), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.GridView), System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+'#End Region
         Private GridControl As DevExpress.XtraGrid.GridControl
-        Private WithEvents GridView As DevExpress.XtraGrid.Views.Grid.GridView
+
+        Private GridView As DevExpress.XtraGrid.Views.Grid.GridView
+
         Private gridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+
         Private gridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
+
         Private gridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
     End Class
 End Namespace
-

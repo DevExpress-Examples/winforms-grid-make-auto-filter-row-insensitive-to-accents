@@ -1,6 +1,4 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.Linq
+Imports System
 Imports System.Windows.Forms
 Imports DevExpress.Data.Filtering
 Imports DevExpress.LookAndFeel
@@ -9,23 +7,21 @@ Imports DevExpress.UserSkins
 Imports DxSample.Filtering
 
 Namespace DxSample
-    Friend NotInheritable Class Program
 
-        Private Sub New()
-        End Sub
+    Friend Module Program
 
         ''' <summary>
         ''' The main entry point for the application.
         ''' </summary>
-        <STAThread> _
-        Shared Sub Main()
-            Application.EnableVisualStyles()
+        <STAThread>
+        Sub Main()
+            Call Application.EnableVisualStyles()
             Application.SetCompatibleTextRenderingDefault(False)
-            BonusSkins.Register()
-            SkinManager.EnableFormSkins()
+            Call BonusSkins.Register()
+            Call SkinManager.EnableFormSkins()
             UserLookAndFeel.Default.SkinName = "Lilian"
-            CriteriaOperator.RegisterCustomFunction(New RemoveDiacriticsFunction())
-            Application.Run(New MainForm())
+            Call CriteriaOperator.RegisterCustomFunction(New RemoveDiacriticsFunction())
+            Call Application.Run(New MainForm())
         End Sub
-    End Class
+    End Module
 End Namespace

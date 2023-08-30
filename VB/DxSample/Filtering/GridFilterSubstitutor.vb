@@ -1,6 +1,7 @@
-﻿Imports DevExpress.Data.Filtering
+Imports DevExpress.Data.Filtering
 
 Namespace DxSample.Filtering
+
     Public Class GridFilterSubstitutor
         Inherits ClientCriteriaVisitorBase
 
@@ -9,13 +10,11 @@ Namespace DxSample.Filtering
         End Function
 
         Public Shared Function Substitute(ByVal source As CriteriaOperator) As CriteriaOperator
-            Return (New GridFilterSubstitutor()).AcceptOperator(source)
+            Return New GridFilterSubstitutor().AcceptOperator(source)
         End Function
 
         Protected Overrides Function VisitFunction(ByVal theOperator As FunctionOperator) As CriteriaOperator
-            If theOperator.OperatorType = FunctionOperatorType.StartsWith OrElse theOperator.OperatorType = FunctionOperatorType.EndsWith OrElse theOperator.OperatorType = FunctionOperatorType.Contains Then
-                Return New FunctionOperator(theOperator.OperatorType, GridFilterSubstitutor.WrapIntoCustomFunction(theOperator.Operands(0)), GridFilterSubstitutor.WrapIntoCustomFunction(theOperator.Operands(1)))
-            End If
+            If theOperator.OperatorType = FunctionOperatorType.StartsWith OrElse theOperator.OperatorType = FunctionOperatorType.EndsWith OrElse theOperator.OperatorType = FunctionOperatorType.Contains Then Return New FunctionOperator(theOperator.OperatorType, WrapIntoCustomFunction(theOperator.Operands(0)), WrapIntoCustomFunction(theOperator.Operands(1)))
             Return MyBase.VisitFunction(theOperator)
         End Function
     End Class
