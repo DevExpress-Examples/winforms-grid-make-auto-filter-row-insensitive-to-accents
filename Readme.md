@@ -10,7 +10,7 @@ This example demonstrates how to create a [custom function](https://docs.devexpr
 
 > **Note**
 >
-> The `SubstituteFilter` event is available in v15.1+. For older versions, create a custom grid control and customize the auto-filter row's behavior. You should override the `GridView.RaiseCustomRowFilter` method to normilize the cell text and filter string using the standard `String.Normalize` method. The cell value is processed based on the comparison operator type specified by the [OptionsColumnFilter.AutoFilterCondition](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Columns.OptionsColumnFilter.AutoFilterCondition) property.
+> The `SubstituteFilter` event is available in v15.1+. For older versions, create a custom grid control and customize the auto-filter row's behavior. You should override the `GridView.RaiseCustomRowFilter` method to normalize the cell text and filter string using the standard `String.Normalize` method. The cell value is processed based on the comparison operator type specified by the [OptionsColumnFilter.AutoFilterCondition](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Columns.OptionsColumnFilter.AutoFilterCondition) property.
 
 
 ## Files to Review
